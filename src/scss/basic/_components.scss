@@ -1,0 +1,215 @@
+@mixin setCard {
+    box-shadow: $shadow;
+    padding: 0px 50px;
+    padding-top: 80px;
+    margin-bottom: 80px;
+}
+
+@mixin setButton {
+    border: none;
+    background: $primary-color;
+    padding: 8px 40px;
+    font-family: $pagraph-font;
+    text-aling: center;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    &:hover {
+        background: lighten($primary-color, 5);
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin setNavBar {
+    background: $primary-color;
+    color: white;
+    padding: 0 10px;
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        li {
+            position: relative;
+            a {
+                color: white;
+                display: block;
+                text-decoration: none;
+                font-family: 'Open Sans';
+                font-weight: lighter;
+                padding: 10px 15px;
+                font-size: 14px;
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+            &:hover ul {
+                display: flex;
+            }
+            ul {
+                position: absolute;
+                background: $primary-color;
+                width: calc(100% + 10px);
+                flex-direction: column;
+                border-top: solid 2px lighten($primary-color, 10);
+                display: none;
+                a {
+                    padding: 10px 0;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    a.active {
+        font-weight: bold;
+    }
+}
+
+@mixin setTitle {
+    font-weight: bold;
+    font-family: $title-font;
+    font-size: 40px;
+}
+
+@mixin setSubTitle {
+    font-weight: bold;
+    font-family: $title-font;
+    font-size: 30px;
+}
+
+@mixin setPagraph() {
+    font-size: 20px;
+    font-family: $pagraph-font;
+    text-align: justify;
+    padding-bottom: 20px;
+}
+
+@mixin setCite {
+    display: flex;
+        justify-content: flex-end;
+        cite {
+            display: flex;
+            align-items: center;
+            .separator {
+                display: block;
+                width:100px;
+                height: 2px;
+                background: black;
+            }
+            .container-user {
+                font-family: 'Open Sans';
+                font-size: 18px;
+                padding: 40px 0;
+                padding-left: 20px;
+            }
+        }
+}
+
+@mixin setInput {
+    font-size: 14px;
+    padding: 5px 10px;
+    font-family: 'Open Sans';
+    border: none;
+    background: none;
+    border: solid 1px black;
+    &:focus {
+        outline: none;
+        border: solid 2px black;
+    }
+}
+
+@mixin setLabel {
+    font-family: 'Open Sans';
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+@mixin setFormControl {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+    label {
+        @include setLabel();
+    }
+    input, textarea {
+        @include setInput();
+        resize: none;
+    }
+}
+
+@mixin setFormButton {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    button {
+        @include setButton();
+        font-size: 16px;
+    }
+}
+
+@mixin setLink {
+    color: $primary-color;
+    font-family: 'Open Sans';
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@mixin setTable($fondo: $primary-color) {
+    width: 100%;
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th {
+        width: 25%;
+        background: $fondo;
+        color: white;
+        font-family: 'Times New Roman';
+        padding: 10px 0;
+    }
+    td {
+        text-align: center;
+        padding: 10px;
+    }
+    button {
+        background: none;
+        border: none;
+        border: solid 1px black;
+        padding: 5px 8px;
+        a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-family: 'Times New Roman';
+        }
+        &:hover {
+            background: black;
+            a {
+                color: white;
+            }
+        }
+    }
+}
+
+@mixin setActionButton ($fondo: $primary-color) {
+    background: $fondo;
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    text-decoration: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    position: .5s;
+    &:hover {
+        transition: .5s;
+        box-shadow: $shadow;
+    }
+}

@@ -1,0 +1,22 @@
+@import "basic/basic";
+@import "basic/variables";
+@import "basic/components";
+
+nav {
+    @include setNavBar();
+}
+
+main {
+    padding: 0 130px;
+    padding-top: 50px;
+    h1 {
+        @include setTitle();
+        font-weight: bold;
+    }
+}
+
+section {
+    .container_table {
+        @include setTable();
+    }
+}

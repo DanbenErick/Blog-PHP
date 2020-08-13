@@ -1,0 +1,29 @@
+@import "basic/_variables";
+@import "basic/basic";
+@import "basic/header";
+@import "basic/components";
+
+
+nav {
+    @include setNavBar();
+}
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+    section {
+        width: 70%;
+    }
+    h1 {
+        @include setTitle();
+        padding-bottom: 80px;
+    }
+    .input_group {
+        @include setFormControl();
+    }
+    .button_group {
+        @include setFormButton();
+        font-family: 'Open Sans';
+    }
+}

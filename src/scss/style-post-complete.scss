@@ -1,0 +1,27 @@
+@import "basic/basic";
+@import "basic/variables";
+@import "basic/header";
+@import "basic/components";
+header {
+	@include setHeader("https://images.pexels.com/photos/3876439/pexels-photo-3876439.jpeg");
+}
+
+main {
+	padding: 40px 200px;
+	article {
+		h1 {
+			@include setTitle();
+			text-align: center;
+			padding-bottom: 40px;
+		}
+		img {
+			padding-bottom: 40px;
+		}
+		p {
+			@include setPagraph();
+		}
+		.container-cite {
+			@include setCite();
+		}
+	}
+}

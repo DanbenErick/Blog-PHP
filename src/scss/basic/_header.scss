@@ -1,0 +1,9 @@
+@mixin setHeader($url) {
+    background: url($url);
+    width: 100%;
+    height: 30vh;
+    //Moviles 
+    @media (max-width: $tablet) {
+        height: 20vh;
+    }
+}

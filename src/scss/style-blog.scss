@@ -1,0 +1,51 @@
+@import "basic/_variables";
+@import "basic/basic";
+@import "basic/header";
+@import "basic/components";
+@import "basic/fonts";
+
+nav {
+    @include setNavBar();
+}
+
+header {
+    @include setHeader("https://images.pexels.com/photos/3876439/pexels-photo-3876439.jpeg");
+}
+
+main {
+    margin: 40px 180px;
+    h1 {
+        @include setTitle();
+        padding-bottom: 40px;
+    }
+}
+article {
+    @include setCard();
+    h2 {
+        @include setSubTitle();
+        padding-bottom: 40px;
+    }
+    p {
+        @include setPagraph();
+        line-height: 30px;
+    }
+    button {
+        background: none;
+        border: none;
+        &:focus {
+            outline: none;
+        }
+        a {
+            display: block;
+            @include setButton();
+        }
+    }
+    .container-cite {
+        @include setCite();
+    }
+}
+footer {
+    .icon-login {
+        @include setActionButton;
+    }
+}

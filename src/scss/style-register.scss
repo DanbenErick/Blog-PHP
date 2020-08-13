@@ -1,0 +1,45 @@
+@import "basic/basic";
+@import "basic/variables";
+@import "basic/header";
+@import "basic/components";
+
+main {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 100%;
+	height: 100vh;
+	max-height: 100vh;
+	overflow: hidden;
+}
+section {
+	
+	&.section-image {
+		background-size: cover;		
+		background: url("../img/background.jpg");
+	}
+	&.authentication {
+		padding: 120px 90px;
+		h1 {
+			@include setTitle();
+			padding: 0;
+			padding-bottom: 40px;
+			font-size: 30px;
+		}
+		.container {
+			form {
+				.form_group {
+					@include setFormControl();
+				}
+				.form_button {
+					@include setFormButton();
+					button {
+						font-family: 'Open Sans';
+					}
+				}
+			}
+		}
+		a {
+			@include setLink();
+		}
+	}
+}
